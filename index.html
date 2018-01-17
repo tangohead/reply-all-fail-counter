@@ -83,8 +83,15 @@ var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct
 document.getElementById("dateof").innerHTML = faildate.getDate() + " " + month[faildate.getMonth()] + " " + faildate.getFullYear();
 
 //From https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
+
+
 var diffDays = Math.round(Math.abs((datetoday.getTime() - faildate.getTime())/(oneday)));
-document.getElementById("beststreak").innerHTML = streak;
+if(diffDays > streak)
+{
+  document.getElementById("beststreak").innerHTML = diffDays + " ONGOING!!!!!";
+}
+else
+  document.getElementById("beststreak").innerHTML = streak;
 document.getElementById("dayssince").innerHTML = diffDays;
 </script>
 </body>
