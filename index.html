@@ -86,7 +86,7 @@ document.getElementById("dateof").innerHTML = faildate.getDate() + " " + month[f
 
 
 var diffDays = Math.round(Math.abs((datetoday.getTime() - faildate.getTime())/(oneday)));
-if(diffDays > streak)
+if(diffDays >= streak)
 {
   document.getElementById("beststreak").innerHTML = diffDays + " ONGOING!!!!!";
 }
