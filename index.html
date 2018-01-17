@@ -1,4 +1,33 @@
-<h1> DAYS SINCE LAST RAF: 0</h1>
-## DATE OF LAST RAF: NN
-## BEST STREAK: YY
-<script>console.log("Hello\n");</script>
+<html>
+<head>
+  <title>Reply All Fail Counter</title>
+  <link rel="stylesheet" type="text/css" href="lol.css">
+</head>
+<body>
+<script>
+var oneday = 24*60*60*1000;
+var faildate = new Date('2018-01-17');
+var streak = 3;
+
+var datetoday = new Date();
+</script>
+
+<div id="info">
+  <marquee><h1>Reply All Fail Counter</h1></marquee>
+<span id="big" class="rainbow">DAYS SINCE LAST RAF: <span id="dayssince"></span></span><br/>
+<div id="spinner">DATE OF LAST RAF: <span id="dateof"></span></div><br />
+<blink>BEST STREAK: <span id="beststreak"></span></blink><br/>
+</div>
+
+<script>
+console.log("Hello\n");
+var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+document.getElementById("dateof").innerHTML = faildate.getDate() + " " + month[faildate.getMonth()] + " " + faildate.getFullYear();
+
+//From https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
+var diffDays = Math.round(Math.abs((datetoday.getTime() - faildate.getTime())/(oneday)));
+document.getElementById("beststreak").innerHTML = streak;
+document.getElementById("dayssince").innerHTML = diffDays;
+</script>
+</body>
+</html>
