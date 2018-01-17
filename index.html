@@ -1,7 +1,65 @@
 <html>
 <head>
   <title>Reply All Fail Counter</title>
-  <link rel="stylesheet" type="text/css" href="lol.css">
+  <style>
+  p{
+    text-align: center;
+  }
+  div#info
+  {
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10%;
+  }
+  #big{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #spinner{
+    margin-top:70px;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari */
+    transform: rotate(20deg);
+    color:blue;
+    font-size: 25px;
+  }
+  .rainbow {
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  blink {
+      -webkit-animation: 1.5s linear infinite condemned_blink_effect; // for android
+      animation: 1.5s linear infinite condemned_blink_effect;
+      font-weight: bold;
+      font-size:20px;
+      color:red;
+  }
+  @-webkit-keyframes condemned_blink_effect { // for android
+      0% {
+          visibility: hidden;
+      }
+      50% {
+          visibility: hidden;
+      }
+      100% {
+          visibility: visible;
+      }
+  }
+  @keyframes condemned_blink_effect {
+      0% {
+          visibility: hidden;
+      }
+      50% {
+          visibility: hidden;
+      }
+      100% {
+          visibility: visible;
+      }
+  }
+</style>
 </head>
 <body>
 <script>
