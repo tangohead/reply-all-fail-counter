@@ -1,4 +1,4 @@
-DIFF_DAYS=$((($(date +%s) - $(date -f last_date +%s)) / (60*60*24)))
+DIFF_DAYS=$((($(TZ=":Europe/London" date +%s) - $(TZ=":Europe/London" date -f last_date +%s)) / (60*60*24)))
 CURR_BEST=$(cat curr_record)
 
 if [ "$DIFF_DAYS" -gt "$CURR_BEST" ];
@@ -13,7 +13,7 @@ fi
 echo $(date +%y%m%d) > last_date
 
 cat header > index.html
-echo "var faildate = new Date('$(date -f last_date +%Y-%m-%d)');" >> index.html
+echo "var faildate = new Date('$(TZ=":Europe/London" date -f last_date +%Y-%m-%d)');" >> index.html
 echo "var streak = $CURR_BEST;" >> index.html
 cat footer >> index.html
 

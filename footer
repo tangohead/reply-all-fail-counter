@@ -1,5 +1,6 @@
 
-var datetoday = new Date();
+var now = new Date;
+var datetoday = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds()));
 </script>
 
 <div id="info">
@@ -17,7 +18,7 @@ document.getElementById("dateof").innerHTML = faildate.getDate() + " " + month[f
 //From https://stackoverflow.com/questions/2627473/how-to-calculate-the-number-of-days-between-two-dates
 
 
-var diffDays = Math.round(Math.abs((datetoday.getTime() - faildate.getTime())/(oneday)));
+var diffDays = Math.floor(Math.abs((datetoday.getTime() - faildate.getTime())/(oneday)));
 if(diffDays >= streak)
 {
   document.getElementById("beststreak").innerHTML = diffDays + " ONGOING!!!!!";
